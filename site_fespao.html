@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FESPAO — Fédération des Étudiants en Sciences Pharmaceutiques de l'Afrique de l'Ouest</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--g:#1A8C3F;--gd:#0F5C28;--gl:#2BB55A;--gp:#E8F5ED;--bk:#0D0D0D;--dk:#1A1A1A;--gr:#F5F5F2;--tx:#2A2A2A;--tm:#6B7280;--wh:#FFFFFF}
+html{scroll-behavior:smooth}
+body{font-family:'Montserrat',sans-serif;color:var(--tx);background:var(--wh);overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.96);backdrop-filter:blur(10px);border-bottom:2px solid var(--g);padding:0 3rem}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:68px}
+.nav-brand{display:flex;align-items:center;gap:.7rem}
+.nav-logo-img{width:42px;height:42px;border-radius:50%;object-fit:cover;border:2px solid var(--g)}
+.nav-name{font-weight:800;font-size:1.05rem;color:var(--gd);letter-spacing:.05em}
+.nav-sub{font-size:.58rem;color:var(--tm);font-weight:400;letter-spacing:.1em;text-transform:uppercase}
+.nav-links{display:flex;gap:1.75rem;list-style:none}
+.nav-links a{font-size:.75rem;font-weight:600;color:var(--tx);text-decoration:none;letter-spacing:.08em;text-transform:uppercase;transition:color .2s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--g);transition:width .25s}
+.nav-links a:hover{color:var(--g)}.nav-links a:hover::after{width:100%}
+.nav-cta{padding:.45rem 1.1rem;background:var(--g);color:white;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border-radius:4px;transition:all .2s}
+.nav-cta:hover{background:var(--gd)}
+.hero{min-height:100vh;background:linear-gradient(135deg,#0A1F10 0%,#0D2B17 55%,#0F3D1E 100%);display:flex;align-items:center;position:relative;overflow:hidden;padding:6rem 3rem 4rem}
+.hero-pat{position:absolute;inset:0;opacity:.04;background-image:repeating-linear-gradient(0deg,transparent,transparent 40px,white 40px,white 41px),repeating-linear-gradient(90deg,transparent,transparent 40px,white 40px,white 41px)}
+.hero-glow{position:absolute;top:-10%;right:-5%;width:55%;aspect-ratio:1;background:radial-gradient(circle,rgba(26,140,63,.18) 0%,transparent 65%);pointer-events:none}
+.hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.1fr .9fr;gap:4rem;align-items:center;position:relative;z-index:1;width:100%}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(26,140,63,.2);border:1px solid rgba(26,140,63,.4);color:#7FD99F;padding:.38rem 1rem;border-radius:100px;font-size:.68rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;margin-bottom:1.5rem}
+.bdot{width:6px;height:6px;background:#7FD99F;border-radius:50%}
+.hero h1{font-size:clamp(2rem,4vw,3.4rem);font-weight:800;color:white;line-height:1.05;margin-bottom:1.2rem}
+.hero h1 span{color:var(--gl)}
+.hero-desc{font-size:.88rem;color:rgba(255,255,255,.55);line-height:1.8;font-weight:300;margin-bottom:1.6rem;max-width:480px}
+.hero-motto{display:flex;gap:.5rem;margin-bottom:2rem;flex-wrap:wrap}
+.mpill{padding:.28rem .8rem;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:100px;font-size:.68rem;font-weight:600;color:rgba(255,255,255,.62);letter-spacing:.1em;text-transform:uppercase}
+.hero-acts{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-g{padding:.8rem 1.8rem;background:var(--g);color:white;font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border:none;border-radius:4px;cursor:pointer;text-decoration:none;display:inline-block;transition:all .2s}
+.btn-g:hover{background:var(--gl);transform:translateY(-2px)}
+.btn-ow{padding:.8rem 1.8rem;background:transparent;color:white;font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border:1px solid rgba(255,255,255,.25);border-radius:4px;cursor:pointer;text-decoration:none;display:inline-block;transition:all .2s}
+.btn-ow:hover{border-color:white}
+.hero-vis{display:flex;justify-content:center;align-items:center}
+.logo-ring{width:250px;height:250px;border-radius:50%;background:white;display:flex;align-items:center;justify-content:center;box-shadow:0 0 70px rgba(26,140,63,.35),0 0 140px rgba(26,140,63,.1);position:relative}
+.logo-ring::before{content:'';position:absolute;inset:-10px;border-radius:50%;border:1px solid rgba(26,140,63,.25)}
+.logo-ring img{width:220px;height:220px;border-radius:50%;object-fit:cover}
+.hstats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.5rem}
+.hs{text-align:center;padding:.8rem;border:1px solid rgba(255,255,255,.07);border-radius:8px;background:rgba(255,255,255,.03)}
+.hsn{font-size:1.5rem;font-weight:800;color:var(--gl)}
+.hsl{font-size:.6rem;color:rgba(255,255,255,.38);letter-spacing:.12em;text-transform:uppercase;margin-top:.2rem}
+section{padding:5rem 3rem}
+.si{max-width:1200px;margin:0 auto}
+.sh{margin-bottom:2.5rem}
+.stag{font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--g);margin-bottom:.6rem}
+.stitle{font-size:clamp(1.6rem,2.8vw,2.3rem);font-weight:800;color:var(--bk);line-height:1.2}
+.stitle em{font-family:'Playfair Display',serif;font-style:italic;color:var(--g)}
+.sline{width:44px;height:3px;background:var(--g);border-radius:2px;margin:.9rem 0}
+.ssub{font-size:.85rem;color:var(--tm);line-height:1.8;max-width:520px;font-weight:400}
+.missions{background:var(--gr)}
+.mgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:1.2rem}
+.mc{background:white;padding:1.6rem 1.4rem;border-radius:10px;border:1px solid #E5E7EB;transition:all .3s;position:relative;overflow:hidden}
+.mc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--g);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.mc:hover{transform:translateY(-4px);box-shadow:0 16px 32px rgba(0,0,0,.08)}.mc:hover::before{transform:scaleX(1)}
+.mi{width:42px;height:42px;background:var(--gp);border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;font-size:1.2rem}
+.mc h3{font-size:.9rem;font-weight:700;color:var(--bk);margin-bottom:.45rem}
+.mc p{font-size:.8rem;color:var(--tm);line-height:1.7}
+.bureau{background:white}
+.pres-card{display:grid;grid-template-columns:280px 1fr;gap:0;border-radius:16px;overflow:hidden;border:1px solid rgba(26,140,63,.18);margin-bottom:2.5rem;box-shadow:0 8px 32px rgba(26,140,63,.08)}
+.pres-photo-wrap{position:relative;background:var(--gp)}
+.pres-photo-wrap img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.pres-badge{position:absolute;bottom:0;left:0;right:0;background:var(--g);color:white;text-align:center;font-size:.7rem;font-weight:700;padding:.5rem;letter-spacing:.12em;text-transform:uppercase}
+.pres-body{padding:2.2rem 2rem;background:linear-gradient(135deg,var(--gp) 0%,white 60%);display:flex;flex-direction:column;justify-content:center}
+.pres-ptag{font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--g);margin-bottom:.5rem}
+.pres-name{font-size:1.7rem;font-weight:800;color:var(--bk);margin-bottom:.2rem;line-height:1.2}
+.pres-role{font-size:.9rem;font-weight:700;color:var(--g);margin-bottom:.2rem}
+.pres-univ{font-size:.8rem;color:var(--tm);margin-bottom:1.1rem;font-style:italic}
+.pres-bio{font-size:.84rem;color:var(--tm);line-height:1.8}
+.mgrid2{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1.2rem}
+.mcard{background:white;border:1px solid #E8EAED;border-radius:12px;overflow:hidden;transition:all .3s}
+.mcard:hover{transform:translateY(-4px);box-shadow:0 16px 32px rgba(0,0,0,.1);border-color:rgba(26,140,63,.3)}
+.mphoto{height:210px;overflow:hidden;background:var(--gr);position:relative}
+.mphoto img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .4s}
+.mcard:hover .mphoto img{transform:scale(1.05)}
+.mcountry{position:absolute;top:.6rem;right:.6rem;background:rgba(0,0,0,.62);color:white;font-size:.62rem;font-weight:600;padding:.22rem .55rem;border-radius:100px;letter-spacing:.06em;backdrop-filter:blur(4px)}
+.mbody{padding:1.1rem .95rem}
+.mname{font-size:.88rem;font-weight:700;color:var(--bk);margin-bottom:.18rem;line-height:1.3}
+.mrole{font-size:.67rem;font-weight:700;color:var(--g);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.35rem}
+.muniv{font-size:.72rem;color:var(--tm);font-style:italic;line-height:1.5}
+.pays{background:var(--gr)}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(145px,1fr));gap:.9rem;margin-top:1.8rem}
+.pcard{display:flex;align-items:center;gap:.7rem;padding:.85rem 1rem;border:1px solid #E5E7EB;border-radius:8px;background:white;transition:all .2s}
+.pcard:hover{border-color:var(--g);background:var(--gp);transform:translateY(-2px)}
+.pflag{font-size:1.2rem}.pname{font-size:.78rem;font-weight:600;color:var(--tx)}
+.rj{background:linear-gradient(135deg,var(--gd),var(--g));color:white;text-align:center}
+.rj .stitle{color:white}.rj .stitle em{color:rgba(255,255,255,.78)}.rj .ssub{color:rgba(255,255,255,.65);margin:0 auto}
+.rsteps{display:flex;justify-content:center;gap:2.5rem;margin:2.5rem 0;flex-wrap:wrap}
+.rstep{text-align:center;max-width:165px}
+.rnum{width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.15);border:2px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:800;color:white;margin:0 auto .8rem}
+.rtit{font-size:.8rem;font-weight:700;margin-bottom:.3rem}.rdsc{font-size:.73rem;color:rgba(255,255,255,.6);line-height:1.6}
+.btn-wh{padding:.82rem 2.2rem;background:white;color:var(--gd);font-size:.8rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;border:none;border-radius:4px;cursor:pointer;text-decoration:none;display:inline-block;transition:all .2s}
+.btn-wh:hover{background:var(--gp);transform:translateY(-2px)}
+footer{background:var(--bk);color:rgba(255,255,255,.52);padding:3rem 3rem 1.5rem}
+.fi{max-width:1200px;margin:0 auto}
+.ftop{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:2.5rem}
+.fbrand h4{font-size:1.15rem;font-weight:800;color:white;margin-bottom:.2rem}
+.fbrand p{font-size:.72rem;color:var(--gl);font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.8rem}
+.fbrand span{font-size:.78rem;line-height:1.7}
+.fcol h5{font-size:.7rem;font-weight:700;color:white;letter-spacing:.15em;text-transform:uppercase;margin-bottom:.9rem}
+.fcol ul{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+.fcol ul a{font-size:.78rem;color:rgba(255,255,255,.42);text-decoration:none;transition:color .2s}
+.fcol ul a:hover{color:var(--gl)}
+.fbot{border-top:1px solid rgba(255,255,255,.07);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.fbot p{font-size:.73rem}
+.fmotto{display:flex;gap:.4rem}
+.fpill{padding:.2rem .62rem;border:1px solid rgba(26,140,63,.3);border-radius:100px;font-size:.6rem;color:var(--gl);font-weight:600;letter-spacing:.1em}
+@media(max-width:900px){
+  nav{padding:0 1.2rem}.nav-links{display:none}
+  .hero-inner{grid-template-columns:1fr}.hero-vis{order:-1}
+  .logo-ring{width:180px;height:180px}.logo-ring img{width:155px;height:155px}
+  .pres-card{grid-template-columns:1fr}.pres-photo-wrap{height:280px}
+  section{padding:3.5rem 1.2rem}
+  .ftop{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-brand">
+      <img class="nav-logo-img" src="logo_fespao.jpeg" alt="FESPAO">
+      <div><div class="nav-name">FESPAO</div><div class="nav-sub">Union · Rigueur · Excellence</div></div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#missions">Missions</a></li>
+      <li><a href="#bureau">Bureau exécutif</a></li>
+      <li><a href="#membres">Pays membres</a></li>
+      <li><a href="#rejoindre">Rejoindre</a></li>
+    </ul>
+    <a href="#rejoindre" class="nav-cta">Adhérer</a>
+  </div>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hero-pat"></div><div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge"><div class="bdot"></div>Afrique de l'Ouest · Pharmacie</div>
+      <h1>Fédération des<br>Étudiants en<br><span>Sciences Pharmaceutiques</span></h1>
+      <p class="hero-desc">FESPAO rassemble les futurs pharmaciens d'Afrique de l'Ouest autour des valeurs d'union, de rigueur et d'excellence pour un système de santé africain plus fort.</p>
+      <div class="hero-motto"><div class="mpill">Union</div><div class="mpill">Rigueur</div><div class="mpill">Excellence</div></div>
+      <div class="hero-acts">
+        <a href="#bureau" class="btn-g">Bureau exécutif</a>
+        <a href="#rejoindre" class="btn-ow">Nous rejoindre</a>
+      </div>
+      <div class="hstats">
+        <div class="hs"><div class="hsn">10+</div><div class="hsl">Pays membres</div></div>
+        <div class="hs"><div class="hsn">14</div><div class="hsl">Membres BE</div></div>
+        <div class="hs"><div class="hsn">2025</div><div class="hsl">Mandat actuel</div></div>
+      </div>
+    </div>
+    <div class="hero-vis">
+      <div class="logo-ring"><img src="logo_fespao.jpeg" alt="Logo FESPAO"></div>
+    </div>
+  </div>
+</section>
+
+<section class="missions" id="missions">
+  <div class="si">
+    <div class="sh">
+      <div class="stag">Ce que nous faisons</div>
+      <div class="stitle">Nos <em>missions</em></div>
+      <div class="sline"></div>
+      <p class="ssub">FESPAO s'engage à promouvoir l'excellence académique, le leadership étudiant et la coopération panafricaine dans le domaine pharmaceutique.</p>
+    </div>
+    <div class="mgrid">
+      <div class="mc"><div class="mi">🎓</div><h3>Excellence académique</h3><p>Favoriser la réussite des étudiants en pharmacie via des échanges de ressources et de méthodologies.</p></div>
+      <div class="mc"><div class="mi">🤝</div><h3>Solidarité régionale</h3><p>Renforcer les liens entre les associations d'étudiants des pays membres de l'Afrique de l'Ouest.</p></div>
+      <div class="mc"><div class="mi">🔬</div><h3>Recherche & Innovation</h3><p>Encourager la recherche scientifique et l'innovation pharmaceutique au service des populations.</p></div>
+      <div class="mc"><div class="mi">🌍</div><h3>Santé communautaire</h3><p>Organiser des activités de sensibilisation et de promotion de la santé publique dans les communautés.</p></div>
+      <div class="mc"><div class="mi">📢</div><h3>Représentation</h3><p>Défendre les intérêts des étudiants en pharmacie auprès des institutions nationales et internationales.</p></div>
+      <div class="mc"><div class="mi">💼</div><h3>Insertion professionnelle</h3><p>Préparer les étudiants au monde professionnel via des stages, formations et réseaux d'anciens.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="bureau" id="bureau">
+  <div class="si">
+    <div class="sh">
+      <div class="stag">Mandat 2025–2026</div>
+      <div class="stitle">Bureau <em>exécutif</em></div>
+      <div class="sline"></div>
+      <p class="ssub">Les 14 membres élus du bureau exécutif FESPAO, représentant 7 pays de l'Afrique de l'Ouest.</p>
+    </div>
+    <div class="pres-card">
+      <div class="pres-photo-wrap">
+        <img src="membre_01_president.jpeg" alt="Ibrahim Soma SYLLA">
+        <div class="pres-badge">Président — FESPAO</div>
+      </div>
+      <div class="pres-body">
+        <div class="pres-ptag">🇲🇱 Mali</div>
+        <div class="pres-name">Ibrahim Soma SYLLA</div>
+        <div class="pres-role">Président de la FESPAO</div>
+        <div class="pres-univ">Étudiant en 5ème année de Pharmacie — Mali</div>
+        <p class="pres-bio">Ibrahim Soma SYLLA dirige la FESPAO pour le mandat 2025–2026. Engagé dans la promotion de l'excellence pharmaceutique et le renforcement de la solidarité entre les étudiants de la région, il œuvre pour un système de santé africain plus fort et plus uni.</p>
+      </div>
+    </div>
+    <div class="mgrid2">
+      <div class="mcard"><div class="mphoto"><img src="membre_02_vp_organisation.jpeg" alt="Ndoumou Ayissi Gabriel Francelin"><div class="mcountry">🇬🇳 Guinée</div></div><div class="mbody"><div class="mname">Ndoumou Ayissi Gabriel Francelin</div><div class="mrole">VP — Organisation</div><div class="muniv">Doctorant en pharmacie — Université La Source, Guinée</div></div></div>
+      <div class="mcard"><div class="mphoto"><img src="membre_03_sg.jpeg" alt="AKAN-KEKOU Clara"><div class="mcountry">🇧🇯 Bénin</div></div><div class="mbody"><div class="mname">Akan-Kekou Clara</div><div class="mrole">Secrétaire Générale du BE</div><div class="muniv">5ème année — Faculté des Sciences de la Santé, Bénin</div></div></div>
+      <div class="mcard"><div class="mphoto"><img src="membre_04_sawadogo.jpeg" alt="Onésime Wendpayimdi SAWADOGO"><div class="mcountry">🇧🇫 Burkina Faso</div></div><div class="mbody"><div class="mname">Onésime Wendpayimdi Sawadogo</div><div class="mrole">Membre du BE</div><div class="muniv">5ème année — INSSA, Université Nazi BONI, Bobo-Dioulasso</div></div></div>
+      <div class="mcard"><div class="mphoto"><img src="membre_05_traore.jpeg" alt="Abdoul Hakim Rafic Traore"><div class="mcountry">🇧🇫 Burkina Faso</div></div><div class="mbody"><div class="mname">Abdoul Hakim Rafic Traore</div><div class="mrole">Commissaire aux comptes</div><div class="muniv">4ème année — INSSA, Université Nazi BONI, Bobo-Dioulasso</div></div></div>
+      <div class="mcard"><div class="mphoto"><img src="membre_06_ziagnon.jpeg" alt="ZIAGNON"><div class="mcountry">🇹🇬 Togo</div></div><div class="mbody"><div class="mname">Ziagnon</div><div class="mrole">Membre du BE</div><div class="muniv">Étudiant en pharmacie — Université de Lomé, Togo</div></div></div>
+      <div class="mcard"><div class="mphoto"><img src="membre_07_dicko.jpeg" alt="Aïssata DICKO"><div class="mcountry">🇲🇱 Mali</div></div><div class="mbody"><div class="mname">Aïssata Dicko</div><div class="mrole">Trésorière Générale du BE</div><div class="muniv">3ème année — USTTB, Bamako, Mali</div></div></div>
+      <div class="mcard"><div class="mphoto"><img src="membre_08_poudiougou.jpeg" alt="Jacob Ogobassa POUDIOUGOU"><div class="mcountry">🇲🇱 Mali</div></div><div class="mbody"><div class="mname">Jacob Ogobassa Poudiougou</div><div class="mrole">VP — Commission scientifique</div><div class="muniv">Interne en pharmacie — USTTB, Bamako, Mali</div></div></div>
+      <div class="mcard"><div class="mphoto"><img src="membre_09_diop.jpeg" alt="Papa Momar Diop"><div class="mcountry">🇸🇳 Sénégal</div></div><div class="mbody"><div class="mname">Papa Momar Diop</div><div class="mrole">VP Adjoint — Médias & Informations</div><div class="muniv">4ème année — Université Cheikh Anta Diop de Dakar</div></div></div>
+      <div class="mcard"><div class="mphoto"><img src="membre_10_yahaya.jpeg" alt="Yahaya Aboubacar"><div class="mcountry">🇳🇪 Niger</div></div><div class="mbody"><div class="mname">Yahaya Aboubacar</div><div class="mrole">Adjoint — Relations Extérieures</div><div class="muniv">4ème année — FSS, Université Abdou Moumouni, Niamey</div></div></div>
+      <div class="mcard"><div class="mphoto"><img src="membre_11_balde.jpeg" alt="BALDÉ Hadja Halimatou"><div class="mcountry">🇬🇳 Guinée</div></div><div class="mbody"><div class="mname">Baldé Hadja Halimatou</div><div class="mrole">VP Adjointe — Commission scientifique</div><div class="muniv">4ème année — Université Gamal Abdel Nasser, Conakry</div></div></div>
+      <div class="mcard"><div class="mphoto"><img src="membre_12_barry.jpeg" alt="Ndeye Khadidiatou Barry"><div class="mcountry">🇸🇳 Sénégal</div></div><div class="mbody"><div class="mname">Ndeye Khadidiatou Barry</div><div class="mrole">Secrétaire Générale Adjointe</div><div class="muniv">5ème année de Pharmacie — Sénégal</div></div></div>
+      <div class="mcard"><div class="mphoto"><img src="membre_13_coulibaly.jpeg" alt="Coulibaly"><div class="mcountry">🇬🇳 Guinée</div></div><div class="mbody"><div class="mname">Coulibaly</div><div class="mrole">Commissaire aux comptes adjoint</div><div class="muniv">Doctorant — Université Kofi Annan, Guinée</div></div></div>
+      <div class="mcard"><div class="mphoto"><img src="membre_14_koffi.jpeg" alt="Koffi Kouamé Agnimel"><div class="mcountry">🇨🇮 Côte d'Ivoire</div></div><div class="mbody"><div class="mname">Koffi Kouamé Agnimel</div><div class="mrole">Responsable Médias</div><div class="muniv">5ème année — Univ. Félix Houphouët-Boigny, Abidjan</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="pays" id="membres">
+  <div class="si">
+    <div class="sh">
+      <div class="stag">Notre portée régionale</div>
+      <div class="stitle">Pays <em>membres</em></div>
+      <div class="sline"></div>
+      <p class="ssub">FESPAO fédère les étudiants en sciences pharmaceutiques des pays d'Afrique de l'Ouest.</p>
+    </div>
+    <div class="pgrid">
+      <div class="pcard"><div class="pflag">🇨🇮</div><div class="pname">Côte d'Ivoire</div></div>
+      <div class="pcard"><div class="pflag">🇸🇳</div><div class="pname">Sénégal</div></div>
+      <div class="pcard"><div class="pflag">🇧🇯</div><div class="pname">Bénin</div></div>
+      <div class="pcard"><div class="pflag">🇧🇫</div><div class="pname">Burkina Faso</div></div>
+      <div class="pcard"><div class="pflag">🇹🇬</div><div class="pname">Togo</div></div>
+      <div class="pcard"><div class="pflag">🇲🇱</div><div class="pname">Mali</div></div>
+      <div class="pcard"><div class="pflag">🇬🇳</div><div class="pname">Guinée</div></div>
+      <div class="pcard"><div class="pflag">🇳🇪</div><div class="pname">Niger</div></div>
+      <div class="pcard"><div class="pflag">🇬🇭</div><div class="pname">Ghana</div></div>
+      <div class="pcard"><div class="pflag">🇳🇬</div><div class="pname">Nigeria</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="rj" id="rejoindre">
+  <div class="si">
+    <div class="stag" style="color:rgba(255,255,255,.5)">Devenir membre</div>
+    <div class="stitle">Rejoignez le mouvement <em>FESPAO</em></div>
+    <div class="sline" style="background:rgba(255,255,255,.35);margin:1rem auto"></div>
+    <p class="ssub">Étudiant en pharmacie en Afrique de l'Ouest ? Rejoignez notre fédération et construisez l'avenir pharmaceutique africain.</p>
+    <div class="rsteps">
+      <div class="rstep"><div class="rnum">1</div><div class="rtit">Contactez-nous</div><div class="rdsc">Envoyez une demande ou contactez l'association de votre pays.</div></div>
+      <div class="rstep"><div class="rnum">2</div><div class="rtit">Rejoignez votre section</div><div class="rdsc">Intégrez l'association nationale membre FESPAO de votre pays.</div></div>
+      <div class="rstep"><div class="rnum">3</div><div class="rtit">Participez</div><div class="rdsc">Prenez part aux activités, congrès et projets de la fédération.</div></div>
+    </div>
+    <a href="mailto:contact@fespao.org" class="btn-wh">Nous contacter</a>
+  </div>
+</section>
+
+<footer>
+  <div class="fi">
+    <div class="ftop">
+      <div class="fbrand"><h4>FESPAO</h4><p>Union · Rigueur · Excellence</p><span>Fédération des Étudiants en Sciences Pharmaceutiques de l'Afrique de l'Ouest — Mandat 2025–2026.</span></div>
+      <div class="fcol"><h5>Organisation</h5><ul><li><a href="#missions">Nos missions</a></li><li><a href="#bureau">Bureau exécutif</a></li><li><a href="#membres">Pays membres</a></li><li><a href="#rejoindre">Adhésion</a></li></ul></div>
+      <div class="fcol"><h5>Ressources</h5><ul><li><a href="#">Documents</a></li><li><a href="#">Publications</a></li><li><a href="#">Formations</a></li><li><a href="#">Partenaires</a></li></ul></div>
+      <div class="fcol"><h5>Contact</h5><ul><li><a href="#">contact@fespao.org</a></li><li><a href="#">Facebook</a></li><li><a href="#">Instagram</a></li><li><a href="#">WhatsApp</a></li></ul></div>
+    </div>
+    <div class="fbot">
+      <p>© 2026 FESPAO · Tous droits réservés</p>
+      <div class="fmotto"><div class="fpill">Union</div><div class="fpill">Rigueur</div><div class="fpill">Excellence</div></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const h=a.getAttribute('href');
+    if(h==='#')return;
+    e.preventDefault();
+    const el=document.querySelector(h);
+    if(el)el.scrollIntoView({behavior:'smooth'});
+  });
+});
+</script>
+</body>
+</html>
